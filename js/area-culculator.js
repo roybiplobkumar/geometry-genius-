@@ -5,8 +5,10 @@ document.getElementById('triangle-btn').addEventListener('click',function(){
     alert('please input value of triangle')
     return;
   }
-  const area=0.5*base*hight;
+  const area=(0.5*base*hight).toFixed(2);
   setValueInnerText('t-result',area)
+   // set CalculationEntry
+   areaCalculation("triangle",area)
   
 })
 
@@ -17,8 +19,11 @@ document.getElementById('rectangle-btn').addEventListener('click',function(){
     alert('please input value of rectangle')
     return;
   }
-  const area=base*hight;
+  const area=(base*hight).toFixed(2);
   setValueInnerText('r-result',area)
+
+   // set CalculationEntry
+   areaCalculation("rectangle",area)
   
 })
 document.getElementById('parallelogram-btn').addEventListener('click',function(){
@@ -28,8 +33,10 @@ document.getElementById('parallelogram-btn').addEventListener('click',function()
     alert('please input value of rectangle')
     return;
   }
-  const area=base*hight;
-  setValueInnerText('p-result',area)
+  const area=(base*hight).toFixed(2);
+  setValueInnerText('p-result',area);
+   // set CalculationEntry
+   areaCalculation("parallelogram",area);
   
 })
 
@@ -40,8 +47,10 @@ document.getElementById('rhombus-btn').addEventListener('click',function(){
     alert('please input value of parallelogram')
     return;
   }
-  const area=0.5*base*hight;
+  const area=(0.5*base*hight).toFixed(2);
   setValueInnerText('rho-result',area)
+   // set CalculationEntry
+   areaCalculation("rhombus",area)
   
 })
 document.getElementById('Pentagon-btn').addEventListener('click',function(){
@@ -51,8 +60,10 @@ document.getElementById('Pentagon-btn').addEventListener('click',function(){
     alert('please input value of parallelogram')
     return;
   }
-  const area=0.5*base*hight;
-  setValueInnerText('penta-result',area)
+  const area=(0.5*base*hight).toFixed(2);
+  setValueInnerText('penta-result',area);
+   // set CalculationEntry
+   areaCalculation("Pentagon",area)
   
 })
 document.getElementById('ellipse-btn').addEventListener('click',function(){
@@ -62,14 +73,29 @@ document.getElementById('ellipse-btn').addEventListener('click',function(){
     alert('please input value of parallelogram')
     return;
   }
-  const area=3.14*base*hight;
-  setValueInnerText('ellipse-result',area)
+  const area=(3.14*base*hight).toFixed(2);
+  setValueInnerText('ellipse-result',area);
+
+  // set CalculationEntry
+  areaCalculation("Ellipse",area)
   
 })
 
 
 // Area Calculation js code
 
-function areaCalculation(){
-  console.log('clicked')
+function areaCalculation(areaType, area){
+  const parentId=document.getElementById('parent-id');
+  const counter=parentId.childElementCount;
+  const p=document.createElement('p');
+  p.classList.add('text-center')
+  p.classList.add('py-3')
+  p.classList.add('text-xl')
+  p.innerHTML=`${counter+1}. ${areaType} ${area} <button class='btn btn-success btn-sm ml-2'>Covert to m<sup>2</sup></button?>`;
+  parentId.appendChild(p);
+ 
+
 }
+
+
+

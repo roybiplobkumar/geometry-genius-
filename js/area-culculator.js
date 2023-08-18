@@ -91,7 +91,7 @@ function areaCalculation(areaType, area){
   p.classList.add('text-center')
   p.classList.add('py-3')
   p.classList.add('text-xl')
-  p.innerHTML=`${counter+1}. ${areaType} ${area} <button class='btn btn-success btn-sm ml-2'>Covert to m<sup>2</sup></button?>`;
+  p.innerHTML=`${counter+1}. ${areaType} ${area} cm<sup>2</sup> <button class='btn btn-success btn-sm ml-2'>Covert to m<sup>2</sup></button?>`;
   parentId.appendChild(p);
  
 
